@@ -1,15 +1,8 @@
 <template>
     <div>
         <b-card header="Filter by" text-variant="white" header-bg-variant="darkblue" :class="'no-border'">
-            <Dropdown :filter_items="dropdown_country" :text="'Country'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Scale'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Flood Type I'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Flood Type II'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Model Type I'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Model Type II'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Model Type III'" />
-            <Dropdown :filter_items="dropdown_country" :class="'mt-2'" :text="'Exposed Items'" />
-            <button class="btn btn-danger btn-block mt-2 shadow-sm" id="reset-filters">
+            <Dropdown v-for="(dropdown, index) in dropdowns" :key="index" :id="index" :filter="dropdown" @filter_clicked="updateFilter" />
+            <button class="btn btn-danger btn-block mt-2 shadow-sm" @click="resetFilters">
                 Reset
             </button>
         </b-card>
@@ -26,14 +19,68 @@
         },
         data() {
             return {
-                dropdown_country: ['Italy', 'Germany'],
-                dropdown_scale: [],
-                dropdown_ft1: [],
-                dropdown_ft2: [],
-                dropdown_mt1: [],
-                dropdown_mt2: [],
-                dropdown_mt3: [],
-                dropdown_eis: []
+                dropdowns: [
+                    {
+                        filter_type: 'Country',
+                        filter_identifier: 'cod',
+                        filter_selected: 'Country',
+                        filter_items: ['Italy', 'Germany']
+                    },
+                    {
+                        filter_type: 'Scale',
+                        filter_identifier: 'soa',
+                        filter_selected: 'Scale',
+                        filter_items: ['Microscale', 'Mesoscale', 'Macroscale']
+                    },
+                    {
+                        filter_type: 'Flood Type I',
+                        filter_identifier: 'floodtypei',
+                        filter_selected: 'Flood Type I',
+                        filter_items: ['Riverine', 'Pluvial', 'Coastal']
+                    },
+                    {
+                        filter_type: 'Flood Type II',
+                        filter_identifier: 'floodtypeii',
+                        filter_selected: 'Flood Type II',
+                        filter_items: ['High velocity', 'Low velocity', 'Both']
+                    },
+                    {
+                        filter_type: 'Model Type I',
+                        filter_identifier: 'modeltypei',
+                        filter_selected: 'Model Type I',
+                        filter_items: ['Relative', 'Absolute', 'Both']
+                    },
+                    {
+                        filter_type: 'Model Type II',
+                        filter_identifier: 'modeltypeii',
+                        filter_selected: 'Model Type II',
+                        filter_items: ['Empirical', 'Deterministic', 'Mixed']
+                    },
+                    {
+                        filter_type: 'Model Type III',
+                        filter_identifier: 'modeltypeiii',
+                        filter_selected: 'Model Type III',
+                        filter_items: ['Deterministic', 'Probabilistic', 'Both']
+                    },
+                    {
+                        filter_type: 'Exposed Items',
+                        filter_identifier: 'eis',
+                        filter_selected: 'Exposed Items',
+                        filter_items: ['Vehicles', 'People']
+                    }
+                ]
+            }
+        },
+        methods: {
+            updateFilter: function(id, index) {
+                this.dropdowns[id].filter_selected = this.dropdowns[id].filter_items[index];
+                this.$emit("updateFilter", this.dropdowns[id].filter_identifier, this.dropdowns[id].filter_selected);
+            },
+            resetFilters: function() {
+                this.dropdowns.forEach(element => {
+                    element.filter_selected = element.filter_type;
+                    this.$emit("resetFilters");
+                });
             }
         }
     }
