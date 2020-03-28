@@ -1,14 +1,18 @@
 <template>
     <div>
-        <b-card no-body header-bg-variant="white" header="Model" :class="'shadow-sm no-border'">
-           
+        <b-card 
+            no-body 
+            header-bg-variant="white" 
+            v-bind:header="model.acronym != null ? model.acronym : model.name" 
+            :class="'shadow-sm no-border'">
         </b-card>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ModelCard'
+    name: 'ModelCard',
+    props: ['model']
 }
 </script>
 
