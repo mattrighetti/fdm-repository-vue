@@ -11,6 +11,7 @@
 
 <script>
     import Dropdown from './Dropdown'
+    import ModelsServices from '@/services/ModelsServices'
 
     export default {
         name: 'DropdownCard',
@@ -82,6 +83,12 @@
                     this.$emit("resetFilters");
                 });
             }
+        },
+        created: function() {
+            ModelsServices.getDynamicFilters().then((filters_dict) => {
+                this.dropdowns[0].filter_items = filters_dict.countryFilters.data
+                this.dropdowns[7].filter_items = filters_dict.eisFilters.data
+            })
         }
     }
 </script>
