@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div>
         <Header />
             <router-view />
         <Footer />
@@ -20,14 +20,6 @@ export default {
 </script>
 
 <style>
-html {
-    animation: fadeSiteIn 0.5s ease forwards;
-}
-
-html .fadeSiteOut {
-    animation: fadeSiteOut 0.5s ease forwards;
-}
-
 body {
     font-family: "Roboto", sans-serif;
 }
