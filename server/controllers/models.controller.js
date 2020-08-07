@@ -62,7 +62,7 @@ router.get("/:modelId/modelinputs", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getModelInputs(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -70,7 +70,7 @@ router.get("/:modelId/modeloutputs", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getModelOutputs(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -78,7 +78,7 @@ router.get("/:modelId/infooncalibration", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getInfoOnCalibration(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -86,7 +86,7 @@ router.get("/:modelId/infoonvalidation", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getInfoOnValidation(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -94,7 +94,7 @@ router.get("/:modelId/transferability", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getTransferability(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -102,7 +102,7 @@ router.get("/:modelId/bibliography", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getBibliography(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
 
@@ -110,6 +110,6 @@ router.get("/:modelId/comparison", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getComparison(idm)
     .then(result => {
-        res.send(JSON.stringify(result));
+        res.json(result);
     });
 });
