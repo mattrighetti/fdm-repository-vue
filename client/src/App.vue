@@ -1,8 +1,6 @@
 <template>
-    <div class="bg-blue-900 w-full h-screen">
-        <Navbar />
-        <router-view />
-    </div>
+    <Navbar />
+    <router-view />
 </template>
 
 <script>
