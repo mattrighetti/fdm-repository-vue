@@ -1,8 +1,8 @@
 <template>
     <div>
         <b-card header="Filter by" text-variant="white" header-bg-variant="darkblue" :class="'no-border'">
-            <Dropdown v-for="(dropdown, index) in dropdowns" :key="index" :id="index" :filter="dropdown" @filter_clicked="updateFilter" />
-            <button class="btn btn-danger btn-block mt-2 shadow-sm" @click="resetFilters">
+            <Dropdown v-for="(dropdown, index) in dropdowns" :key="index" :id="index" :filter="dropdown" @filter_clicked="update-filter" />
+            <button class="btn btn-danger btn-block mt-2 shadow-sm" @click="reset-filters">
                 Reset
             </button>
         </b-card>
@@ -75,12 +75,12 @@
         methods: {
             updateFilter: function(id, index) {
                 this.dropdowns[id].filter_selected = this.dropdowns[id].filter_items[index];
-                this.$emit("updateFilter", this.dropdowns[id].filter_identifier, this.dropdowns[id].filter_selected);
+                this.$emit("update-filter", this.dropdowns[id].filter_identifier, this.dropdowns[id].filter_selected);
             },
             resetFilters: function() {
                 this.dropdowns.forEach(element => {
                     element.filter_selected = element.filter_type;
-                    this.$emit("resetFilters");
+                    this.$emit("reset-filters");
                 });
             }
         },

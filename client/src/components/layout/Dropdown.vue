@@ -13,7 +13,7 @@
         props: ['id', 'filter'],
         methods: {
             filter_clicked: function(id, index) {
-                this.$emit("filter_clicked", id, index);
+                this.$emit("filter-clicked", id, index);
             }
         }
     }
