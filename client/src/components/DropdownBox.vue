@@ -14,21 +14,14 @@
                 </button>
             </span>
         </div>
-        <button v-if="state.hidden" @click="state.hidden=false"
-            class="fixed w-full h-full top-0 right-0 left-0 bottom-0"></button>
+        <button v-if="state.hidden" @click="state.hidden=false" class="fixed w-full h-full top-0 right-0 left-0 bottom-0"></button>
         <transition name="fade">
             <div v-if="state.hidden" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg">
                 <div class="rounded-md bg-white shadow-xs">
                     <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        <a href="#"
+                        <a v-for="value in dropdown.values" :key="value"
                             class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                            role="menuitem">Account settings</a>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                            role="menuitem">Support</a>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                            role="menuitem">License</a>
+                            role="menuitem">{{ value }}</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +35,10 @@ import { reactive } from 'vue'
 export default {
     name: "FilterBox",
     props: {
-        dropdown: Object
+        dropdown: {
+            name: String,
+            values: Array
+        }
     },
     setup() {
         const state = reactive({ hidden: false })
