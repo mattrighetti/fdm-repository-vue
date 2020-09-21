@@ -1,34 +1,27 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Models from '@/components/Models'
-import Model from '@/components/Model'
-import About from '@/components/About'
-import GetInvolved from '@/components/GetInvolved'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
 
-Vue.use(Router)
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/About.vue')
+    }
+  }
+]
 
-export default new Router({
-    routes: [
-        {
-            path: "/",
-            name: "models",
-            component: Models
-        },
-        {
-            path: "/model/:model_id",
-            name: "model",
-            model_id: 0,
-            component: Model
-        },
-        {
-            path: "/about",
-            name: "about",
-            component: About
-        },
-        {
-            path: "/getInvolved",
-            name: "get_involved",
-            component: GetInvolved
-        }
-    ]
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 })
+
+export default router

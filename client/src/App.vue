@@ -1,30 +1,20 @@
 <template>
-    <div>
-        <Header />
-            <router-view />
-        <Footer />
+    <div class="bg-blue-900 w-full h-screen">
+        <Navbar />
+        <router-view />
     </div>
 </template>
 
 <script>
-import Header from './components/layout/Header'
-import Footer from './components/layout/Footer'
+import Navbar from '@/components/Navbar'
 
 export default {
-    name: 'App',
+    name: "App",
     components: {
-        Header,
-        Footer
+        Navbar
     }
 }
 </script>
 
 <style>
-body {
-    font-family: "Roboto", sans-serif;
-}
-
-.bg-darkblue {
-    background-color: #253862;
-}
 </style>
