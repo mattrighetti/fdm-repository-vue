@@ -1,5 +1,10 @@
 const db = require('./database.service');
 
+module.exports = { 
+    getFiltersWithoutSlash,
+    getCountriesOfDevelopment
+}
+
 async function getFiltersWithoutSlash() {
     return db("models")
     .distinct('eis')
@@ -11,9 +16,4 @@ async function getCountriesOfDevelopment() {
     return db("models")
     .distinct('cod')
     .map(obj => obj.cod)
-}
-
-module.exports = { 
-    getFiltersWithoutSlash,
-    getCountriesOfDevelopment
 }

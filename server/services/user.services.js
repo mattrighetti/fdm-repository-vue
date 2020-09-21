@@ -1,5 +1,10 @@
 const db = require('./database.service');
 
+module.exports = {
+    saveUserData,
+    saveFile
+}
+
 async function saveUserData(user) {
     var date = new Date();
     let month = date.getMonth() + 1;
@@ -31,9 +36,4 @@ async function saveFile(files) {
             return true;
         });
     }
-}
-
-module.exports = {
-    saveUserData,
-    saveFile
 }

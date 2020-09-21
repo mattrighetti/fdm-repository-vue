@@ -1,5 +1,21 @@
 const db = require('./database.service');
 
+module.exports = {
+    getAllModels,
+    countAllModels,
+    getModel,
+    getHeader,
+    getExpression,
+    getId,
+    getModelInputs,
+    getModelOutputs,
+    getInfoOnCalibration,
+    getInfoOnValidation,
+    getTransferability,
+    getBibliography,
+    getComparison
+}
+
 /**
  * Returns all models in the database with all their fields
  * @param {If `true` returns all models with just their filters values and no other fiels} justWithFilters 
@@ -92,20 +108,4 @@ async function getComparison(modelId) {
     return db("models")
     .where('id', modelId)
     .select('Comparison')
-}
-
-module.exports = {
-    getAllModels,
-    countAllModels,
-    getModel,
-    getHeader,
-    getExpression,
-    getId,
-    getModelInputs,
-    getModelOutputs,
-    getInfoOnCalibration,
-    getInfoOnValidation,
-    getTransferability,
-    getBibliography,
-    getComparison
 }
