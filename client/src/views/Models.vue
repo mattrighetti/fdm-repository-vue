@@ -1,6 +1,6 @@
 <template>
-    <div class="w-screen px-5">
-        <SearchBar class="mb-2"/>
+    <div class="w-screen px-20">
+        <SearchBar class="mb-5"/>
         <div class="grid grid-cols-10 gap-4">
             <div class="col-span-8">
                 <ModelCard v-for="model in models" :key="model.name" :model="model" class="mb-1"/>
