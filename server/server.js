@@ -24,6 +24,7 @@ app.use('/missing_models',  require('./controllers/missing_models.controller'));
 app.use('/user',            require('./controllers/user.controller'));
 app.use('/data',            require('./controllers/data.controller'));
 app.use('/filters',         require('./controllers/filters.controller'));
+app.use('/utils',           require('./controllers/utils.controller'));
 
 app.set("port", serverPort);
 
