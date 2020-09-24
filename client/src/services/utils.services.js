@@ -1,9 +1,5 @@
 import api from '@/services/api'
 
-export function getModels() {
-    return api().get('/models')
-}
-
 export function getDropdownConfig() {
     return api().get('/utils/filters').then(response => {
         var dropdown_config = {
