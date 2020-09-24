@@ -3,8 +3,11 @@
         <div>
             <span class="rounded-md shadow-sm">
                 <button type="button" @click="state.hidden = !state.hidden"
-                    class="z-0 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
-                    id="options-menu" aria-haspopup="true" :aria-expanded="state.hidden">
+                    class="z-0 inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
+                    id="options-menu" 
+                    aria-haspopup="true" 
+                    :aria-expanded="state.hidden" 
+                    :class="dropdown.selected == null ? 'bg-white  text-gray-700  hover:text-gray-500' : 'bg-green-500 text-white  hover:text-gray-500'">
                     {{ dropdown.selected == null ? dropdown.name : dropdown.selected }}
                     <svg class="-mr-1 ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"

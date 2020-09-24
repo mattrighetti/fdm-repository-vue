@@ -1,7 +1,11 @@
 <template>
     <div class="rounded border border-gray-300 overflow-hidden">
         <div class="px-6 py-4">
-            <div class="font-light text-lg">{{ model.name }}</div>
+            <a href="#">
+                <div class="font-light text-lg">
+                    {{ model.acronym != null ? model.acronym : model.name }}
+                </div>
+            </a>
         </div>
         <div class="px-6 pb-2">
             <span 

@@ -19,13 +19,13 @@
             <div :class="open ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto">
                 <div class="text-sm sm:flex-grow mr-5">
                     <router-link to="/" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-4">
-                        <span class="font-semibold text-xl tracking-tight">Discover More</span>
+                        <span class="font-normal text-xl tracking-tight">Discover More</span>
                     </router-link>
                     <router-link to="/about" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-4">
-                        <span class="font-semibold text-xl tracking-tight">About</span>
+                        <span class="font-normal text-xl tracking-tight">About</span>
                     </router-link>
                     <router-link to="/about" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-4">
-                        <span class="font-semibold text-xl tracking-tight">Get Involved</span>
+                        <span class="font-normal text-xl tracking-tight">Get Involved</span>
                     </router-link>
                 </div>
             </div>
