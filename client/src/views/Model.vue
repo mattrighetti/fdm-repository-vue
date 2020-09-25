@@ -1,8 +1,8 @@
 <template>
-    <div class="w-screen px-5 md:px-15 lg:px-20 xl:px-64 pt-10 pb-20">
+    <div class="px-5 md:px-15 lg:px-20 xl:px-64 pt-10 pb-20">
         <ol class="list-reset flex text-grey-dark">
             <li>
-                <router-link :to="{ name: 'models' }" class="text-blue font-bold">Models</router-link>
+                <router-link :to="{ name: 'models' }" class="text-blue font-bold no-underline hover:underline">Models</router-link>
             </li>
             <li><span class="mx-2">/</span></li>
             <li>

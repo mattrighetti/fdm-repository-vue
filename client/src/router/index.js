@@ -17,6 +17,26 @@ const routes = [{
         path: "/models/:id",
         name: "model",
         component: Model
+    },
+    { 
+        path: "/faq",
+        name: "faq",
+        component: Model
+    },
+    { 
+        path:"/terms",
+        name: "terms",
+        component: Model
+    },
+    { 
+        path: "/policy",
+        name: "ppolicy",
+        component: Model
+    },
+    { 
+        path: "/credits",
+        name: "credits",
+        component: Model
     }
 ]
 
