@@ -16,8 +16,8 @@
                     </svg>
                 </button>
             </div>
-            <div :class="open ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto">
-                <div class="text-sm sm:flex-grow mr-5">
+            <div :class="open ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto text-white">
+                <div class="text-sm sm:flex-grow">
                     <router-link to="/" class="no-underline block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-4">
                         <span class="font-normal text-xl tracking-tight">Discover More</span>
                     </router-link>
