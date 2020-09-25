@@ -11,3 +11,7 @@ export function getModel(id) {
 export function getModelMarkdown(id) {
     return api().get(`/models/${id}/markdown`)
 }
+
+export function getMissingModels() {
+    return api().get('/missing_models')
+}

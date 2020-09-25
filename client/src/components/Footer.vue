@@ -6,8 +6,8 @@
                     <div class="flex flex-col">
                         <span class="text-white font-bold uppercase mb-2">Links</span>
                         <span class="my-2"><router-link :to="{ name: 'faq' }" class="text-white font-light text-md hover:text-blue-500">FAQ</router-link></span>
-                        <span class="my-2"><router-link :to="{ name: 'terms' }" class="text-white  text-md hover:text-blue-500">Terms of Service & Copyright</router-link></span>
-                        <span class="my-2"><router-link :to="{ name: 'ppolicy' }" class="text-white  text-md hover:text-blue-500">Privacy Policy</router-link></span>
+                        <span class="my-2"><router-link :to="{ name: 'copyright' }" class="text-white  text-md hover:text-blue-500">Terms of Service & Copyright</router-link></span>
+                        <span class="my-2"><router-link :to="{ name: 'privacy' }" class="text-white  text-md hover:text-blue-500">Privacy Policy</router-link></span>
                         <span class="my-2"><router-link :to="{ name: 'credits' }" class="text-white  text-md hover:text-blue-500">Credits</router-link></span>
                     </div>
                     <div class="flex flex-col">

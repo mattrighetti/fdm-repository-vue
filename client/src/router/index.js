@@ -2,11 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Models from '@/views/Models'
 import About from '@/views/About'
 import Model from '@/views/Model'
+import CrossValidation from '@/views/CrossValidation'
+import GetInvolved from '@/views/GetInvolved'
+import MissingModels from '@/views/MissingModels'
+import Copyright from '@/views/Copyright'
+import Privacy from '@/views/Privacy'
 
 const routes = [{
-        path: "/models",
+        path: "/",
         name: "models",
-        component: Models
+        component: Models,
+        alias: "/models"
     },
     {
         path: "/about",
@@ -18,20 +24,35 @@ const routes = [{
         name: "model",
         component: Model
     },
+    {
+        path: "/cross-validation",
+        name: "cross-validation",
+        component: CrossValidation
+    },
+    {
+        path: "/missing-models",
+        name: "missing-models",
+        component: MissingModels
+    },
+    {
+        path: "/get-involved",
+        name: "get-involved",
+        component: Models
+    },
     { 
         path: "/faq",
         name: "faq",
         component: Model
     },
     { 
-        path:"/terms",
-        name: "terms",
-        component: Model
+        path:"/copyright",
+        name: "copyright",
+        component: Copyright
     },
     { 
-        path: "/policy",
-        name: "ppolicy",
-        component: Model
+        path: "/privacy",
+        name: "privacy",
+        component: Privacy
     },
     { 
         path: "/credits",

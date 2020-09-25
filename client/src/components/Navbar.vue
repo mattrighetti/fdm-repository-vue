@@ -1,5 +1,4 @@
 <template>
-    <!-- This example requires Tailwind CSS v1.4.0+ -->
     <div class="relative bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -33,7 +32,7 @@
                                                 <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                                                 <div class="space-y-1">
                                                     <p class="text-base leading-6 font-medium text-gray-900">
-                                                        Missing models
+                                                        Work in progress
                                                     </p>
                                                     <p class="text-sm leading-5 text-gray-500">
                                                         What we're working on

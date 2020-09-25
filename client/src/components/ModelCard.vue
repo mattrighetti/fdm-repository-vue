@@ -11,7 +11,7 @@
             <span
             v-for="pill in pills" 
             :key="pill" 
-            class="inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
+            class="inline-block rounded-full px-3 py-1 text-xs font-semibold mr-2 mb-2"
             v-bind:class="highlighted.includes(pill) ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'"
             >
             {{ pill }}
