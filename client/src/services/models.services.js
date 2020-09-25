@@ -7,3 +7,7 @@ export function getModels() {
 export function getModel(id) {
     return api().get(`/models/${id}`)
 }
+
+export function getModelMarkdown(id) {
+    return api().get(`/models/${id}/markdown`)
+}

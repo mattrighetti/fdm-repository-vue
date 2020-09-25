@@ -1,11 +1,11 @@
 <template>
     <div class="rounded border border-gray-300 overflow-hidden">
         <div class="px-6 py-4">
-            <a href="#">
+            <router-link :to="{ name: 'model', params: { id: this.model.id }}">
                 <div class="font-light text-lg">
                     {{ model.acronym != null ? model.acronym : model.name }}
                 </div>
-            </a>
+            </router-link>
         </div>
         <div class="px-6 pb-2">
             <span 
@@ -13,7 +13,9 @@
             :key="pill" 
             class="inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
             v-bind:class="highlighted.includes(pill) ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'"
-            >{{ pill }}</span>
+            >
+            {{ pill }}
+            </span>
         </div>
     </div>
 </template>
