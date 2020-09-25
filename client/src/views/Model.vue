@@ -15,7 +15,7 @@
                 <p class="text-xl font-light mb-5" v-if="model.acronym != null">{{model.name}}</p>
             </div>
             <div v-else>
-                <p class="text-4xl font-normal">{{model.name}}</p>
+                <p class="text-4xl font-normal mb-5">{{model.name}}</p>
             </div>
             <div class="block">
                 <div class="block">
