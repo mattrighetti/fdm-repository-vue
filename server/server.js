@@ -19,12 +19,12 @@ app.use(fileupload())
 app.use(morgan('combined'));
 app.use(cors());
 
-app.use('api/models',          require('./controllers/models.controller'));
-app.use('api/missing_models',  require('./controllers/missing_models.controller'));
-app.use('api/user',            require('./controllers/user.controller'));
-app.use('api/data',            require('./controllers/data.controller'));
-app.use('api/filters',         require('./controllers/filters.controller'));
-app.use('api/utils',           require('./controllers/utils.controller'));
+app.use('/api/models',          require('./controllers/models.controller'));
+app.use('/api/missing_models',  require('./controllers/missing_models.controller'));
+app.use('/api/user',            require('./controllers/user.controller'));
+app.use('/api/data',            require('./controllers/data.controller'));
+app.use('/api/filters',         require('./controllers/filters.controller'));
+app.use('/api/utils',           require('./controllers/utils.controller'));
 
 app.set("port", serverPort);
 

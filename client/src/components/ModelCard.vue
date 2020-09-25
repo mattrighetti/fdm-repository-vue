@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded border border-gray-300 overflow-hidden">
+    <div class="rounded border border-gray-300 overflow-hidden hover:bg-gray-100">
         <div class="px-6 py-4">
             <router-link :to="{ name: 'model', params: { id: this.model.id }}">
                 <div class="font-light text-lg no-underline hover:underline">

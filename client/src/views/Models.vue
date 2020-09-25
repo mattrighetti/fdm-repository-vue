@@ -1,5 +1,6 @@
 <template>
     <div class="px-3 lg:px-20 mb-20">
+        <p class="text-3xl mt-5">Models</p>
         <SearchBar class="mb-5"/>
         <div class="grid grid-cols-10 gap-4">
             <div class="col-span-10 md:col-span-7 xl:col-span-8">

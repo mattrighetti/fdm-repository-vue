@@ -10,6 +10,10 @@
                         <span class="my-2"><router-link :to="{ name: 'ppolicy' }" class="text-white  text-md hover:text-blue-500">Privacy Policy</router-link></span>
                         <span class="my-2"><router-link :to="{ name: 'credits' }" class="text-white  text-md hover:text-blue-500">Credits</router-link></span>
                     </div>
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold uppercase mb-2">Contacts</span>
+                        <span class="my-2"><a href="#" class="text-white font-light text-md hover:text-blue-500">Email us</a></span>
+                    </div>
                     <div class="flex flex-col mt-10 md:mt-0">
                         <img src="http://www.fdm.polimi.it/assets/img/logo-poli.png" alt="polimi" width="200" height="65">
                     </div>
@@ -19,7 +23,7 @@
         <div class="container mx-auto px-6">
             <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
                 <div class="sm:w-2/3 text-center py-6">
-                    <p class="text-sm text-blue-700 font-bold mb-2">
+                    <p class="text-sm text-white font-bold mb-2">
                         © 2020 by Mattia Righetti
                     </p>
                 </div>
