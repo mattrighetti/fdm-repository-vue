@@ -2,13 +2,13 @@
     <div class="rounded border border-gray-300 overflow-hidden">
         <div class="px-6 py-4">
             <router-link :to="{ name: 'model', params: { id: this.model.id }}">
-                <div class="font-light text-lg">
+                <div class="font-light text-lg no-underline hover:underline">
                     {{ model.acronym != null ? model.acronym : model.name }}
                 </div>
             </router-link>
         </div>
         <div class="px-6 pb-2">
-            <span 
+            <span
             v-for="pill in pills" 
             :key="pill" 
             class="inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"

@@ -1,6 +1,60 @@
 <template>
     <div class="w-screen px-5 md:px-15 lg:px-20 xl:px-64 pt-10 pb-20">
-        <article class="markdown-body" v-html="compiledMarkdown"></article>
+        <ol class="list-reset flex text-grey-dark">
+            <li>
+                <router-link :to="{ name: 'models' }" class="text-blue font-bold">Models</router-link>
+            </li>
+            <li><span class="mx-2">/</span></li>
+            <li>
+                {{ model.name }}
+            </li>
+        </ol>
+        <div class="border-solid border border-opacity-25 border-gray-600 rounded-lg px-8 py-8 mt-10">
+            <div v-if="model.acronym != null">
+                <p class="text-4xl font-normal">{{model.acronym}}</p>
+                <p class="text-xl font-light mb-5" v-if="model.acronym != null">{{model.name}}</p>
+            </div>
+            <div v-else>
+                <p class="text-4xl font-normal">{{model.name}}</p>
+            </div>
+            <div class="block">
+                <div class="block">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Country of development</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.cod}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Scale of analysis</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.soa}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Flood type I</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.floodtypei}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Flood type II</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.floodtypeii}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Model type I</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.modeltypei}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Model type II</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.modeltypeii}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Model type III</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.modeltypeiii}}</span>
+                </div>
+                <div class="block mt-3">
+                    <p class="block sm:inline-block text-base font-semibold sm:pr-5">Exposed Items</p>
+                    <span class="inline-block mt-2 sm:inline-block rounded-full px-3 py-1 text-sm font-semibold bg-gray-200 text-gray-700">{{model.eis}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="border-solid border border-opacity-25 border-gray-600 rounded-lg px-8 py-8 mt-10">
+            <article class="markdown-body" v-html="compiledMarkdown"></article>
+        </div>
     </div>
 </template>
 
@@ -35,6 +89,7 @@ export default {
     data() {
         return {
             modelId: parseInt(this.$route.params.id),
+            model: Object,
             markdown: ""
         }
     },
@@ -51,14 +106,17 @@ export default {
         mathJaxScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML')
         document.body.appendChild(mathJaxScript)
 
-        getModelMarkdown(this.modelId).then(response => {
-            this.markdown = response.data.description
-        })
+        getModel(this.modelId).then(response => this.model = response.data[0])
+        getModelMarkdown(this.modelId).then(response => this.markdown = response.data.description)
     }
 }
 </script>
 
 <style>
+.text-black {
+    color: #24292e;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
