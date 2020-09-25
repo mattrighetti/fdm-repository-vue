@@ -13,7 +13,8 @@ module.exports = {
     getInfoOnValidation,
     getTransferability,
     getBibliography,
-    getComparison
+    getComparison,
+    getModelMarkdown
 }
 
 /**
@@ -48,6 +49,12 @@ async function getModel(id) {
     return db("models")
     .where('id', id)
     .select()
+}
+
+async function getModelMarkdown(id) {
+    return db("model_filters")
+    .where('id', id)
+    .select('description')
 }
 
 async function getHeader(modelId) {

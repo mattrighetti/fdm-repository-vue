@@ -33,6 +33,14 @@ router.get("/:modelId", function (req, res) {
     });
 });
 
+router.get("/:modelId/markdown", function (req, res) {
+    let idm = parseInt(req.params.modelId);
+    modelsServices.getModelMarkdown(idm)
+    .then(result => {
+        res.json(result[0]);
+    });
+});
+
 router.get("/:modelId/header", function (req, res) {
     let idm = parseInt(req.params.modelId);
     modelsServices.getHeader(idm)
