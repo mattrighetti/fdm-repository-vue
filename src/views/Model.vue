@@ -11,8 +11,11 @@
             </li>
         </ol>
         <div class="border-solid border border-opacity-25 border-gray-600 rounded-lg px-8 py-8 mt-10">
-            <div v-if="model.acronym != null">
-                <p class="text-4xl font-normal">{{ model.acronym }}</p>
+            <div v-if="model.acronym != ''">
+                <p class="text-4xl font-normal">
+                    {{ model.acronym }}
+                    <sub v-if="model.version != ''">{{ model.version }}</sub>
+                </p>
                 <p class="text-xl font-light mb-5" v-if="model.acronym != null">
                     {{ model.name }}
                 </p>

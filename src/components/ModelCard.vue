@@ -4,6 +4,7 @@
             <router-link :to="{ name: 'model', params: { id: this.model.id }}">
                 <div class="font-light text-lg no-underline hover:underline">
                     {{ model.acronym != "" ? model.acronym : model.name }}
+                    <sub v-if="model.version != ''">{{ model.version }}</sub>
                 </div>
             </router-link>
         </div>
