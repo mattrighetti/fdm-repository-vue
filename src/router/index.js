@@ -7,12 +7,17 @@ import GetInvolved from '@/views/GetInvolved'
 import MissingModels from '@/views/MissingModels'
 import Copyright from '@/views/Copyright'
 import Privacy from '@/views/Privacy'
+import LandingPage from '@/views/LandingPage'
 
-const routes = [{
+const routes = [
+    {
         path: "/",
+        name: "landing",
+        component: LandingPage
+    },{
+        path: "/models",
         name: "models",
-        component: Models,
-        alias: "/models"
+        component: Models
     },
     {
         path: "/about",

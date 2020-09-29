@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                 <div class="lg:w-0 lg:flex-1">
-                    <router-link :to="{ name: 'models' }" class="flex">
+                    <router-link :to="{ name: 'landing' }" class="flex">
                         <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
                     </router-link>
                 </div>
@@ -16,6 +16,9 @@
                     </button>
                 </div>
                 <nav class="hidden md:flex space-x-10">
+                    <router-link :to="{ name: 'models' }" class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+                        Models
+                    </router-link>
                     <div class="relative">
                         <button type="button" @click="toggle" class="text-gray-500 group inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                             <span>Discover More</span>
