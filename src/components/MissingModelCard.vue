@@ -14,17 +14,17 @@ export default {
         missing_model: {
             id: String,
             name: String,
-            biblio: String
+            bibliography: String
         }
     },
     computed: {
         parsed_biblio: {
             get() {
-                if (this.missing_model.biblio == null) {
+                if (this.missing_model.bibliography == null) {
                     return ""
                 }
 
-                return marked(this.missing_model.biblio);
+                return marked(this.missing_model.bibliography);
             }
         }
     }

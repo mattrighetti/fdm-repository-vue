@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { getModel, getModelMarkdown } from '@/services/models.services'
+import { getModel } from '@/services/models.services'
 import marked from 'marked'
 
 const renderer = new marked.Renderer();
@@ -80,10 +80,6 @@ renderer.image = function (src, title, alt) {
   return res + '">'
 }
 
-marked.setOptions({
-    renderer: renderer
-})
-
 export default {
     name: 'model',
     data() {
@@ -96,7 +92,7 @@ export default {
     computed: {
         compiledMarkdown: {
             get() {
-                var parsed = marked.parse(this.markdown)
+                var parsed = marked(this.markdown)
                 return parsed
             }
         }
@@ -106,8 +102,10 @@ export default {
         mathJaxScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML')
         document.body.appendChild(mathJaxScript)
 
-        getModel(this.modelId).then(response => this.model = response.data[0])
-        getModelMarkdown(this.modelId).then(response => this.markdown = response.data.description)
+        getModel(this.modelId).then(response => {
+            this.model = response.data
+            this.markdown = this.model.description
+        })
     }
 }
 </script>

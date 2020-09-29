@@ -1,7 +1,7 @@
 import api from '@/services/api'
 
 export function getDropdownConfig() {
-    return api().get('/utils/filters').then(response => {
+    return api().get('/filters').then(response => {
         var dropdown_config = {
             cod: { name: "Country" , values: response.data.cod, selected: null },
             soa: { name: "Scale" , values: response.data.soa, selected: null },
