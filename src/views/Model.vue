@@ -92,24 +92,6 @@
 import { getModel } from "@/services/models.services";
 import marked from "marked";
 
-const renderer = new marked.Renderer();
-
-function sanitize(str) {
-    return str.replace(/&<"/g, function(m) {
-        if (m === "&") return "&amp;";
-        if (m === "<") return "&lt;";
-        return "&quot;";
-    });
-}
-
-renderer.image = function(src, title, alt) {
-    const exec = /=\s*(\d*)\s*x\s*(\d*)\s*$/.exec(title);
-    let res = '<img src="' + sanitize(src) + '" alt="' + sanitize(alt);
-    if (exec && exec[1]) res += '" height="' + exec[1];
-    if (exec && exec[2]) res += '" width="' + exec[2];
-    return res + '">';
-};
-
 export default {
     name: "model",
     data() {
