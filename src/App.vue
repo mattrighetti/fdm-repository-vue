@@ -17,4 +17,9 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
 </style>
