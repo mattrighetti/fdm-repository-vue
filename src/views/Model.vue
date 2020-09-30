@@ -109,31 +109,57 @@ export default {
             }
         }
     },
-    watch: {
-        compiledMarkdown() {
-            this.injectScriptTag("https://yihui.org/js/math-code.js")
-            setTimeout(() => {
-                this.injectScriptTag("https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js", true, true)
-            }, 500);
-        }
-    },
     mounted() {
+        this.injectScriptTag("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML", "Mathjax-script", true, false)
         getModel(this.modelId).then(response => {
             this.model = response.data;
             this.markdown = this.model.description;
-        });
+        }).then(() => {
+            this.cleanMathCode()
+        })
+    },
+    watch: {
+        compiledMarkdown() {
+            this.$nextTick(() => {
+                window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
+            })
+        }
     },
     methods: {
-        injectScriptTag(src, async=false, head=false) {
-            console.log("Injecting", src)
-            let script = document.createElement("script")
-            script.setAttribute("src", src)
-            script.setAttribute("type", "text/javascript")
-            script.async = async
-            if (head) {
-                document.head.appendChild(script)
-            } else {
-                document.body.appendChild(script)
+        injectScriptTag(src, id, async=false, head=false) {
+            if (document.getElementById(id) == null) {
+                console.log("Injecting", src)
+
+                let script = document.createElement("script")
+                script.id = id
+                script.setAttribute("src", src)
+                script.setAttribute("type", "text/javascript")
+                script.async = async
+                if (head) {
+                    document.head.appendChild(script)
+                } else {
+                    document.body.appendChild(script)
+                }
+            }
+        },
+        cleanMathCode() {
+            var i, text, code, codes = document.getElementsByTagName('code');
+            for (i = 0; i < codes.length;) {
+                code = codes[i];
+                if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+                    text = code.textContent;
+                    if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+                        text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+                        code.textContent = text;
+                    }
+                    if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+                        /^\$(.|\s)+\$$/.test(text) ||
+                        /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+                        code.outerHTML = code.innerHTML; // remove <code></code>
+                        continue;
+                    }
+                }
+                i++;
             }
         }
     }
