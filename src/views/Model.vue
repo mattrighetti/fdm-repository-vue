@@ -109,18 +109,33 @@ export default {
             }
         }
     },
+    watch: {
+        compiledMarkdown() {
+            this.injectScriptTag("https://yihui.org/js/math-code.js")
+            setTimeout(() => {
+                this.injectScriptTag("https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js", true, true)
+            }, 500);
+        }
+    },
     mounted() {
-        let mathJaxScript = document.createElement("script");
-        mathJaxScript.setAttribute(
-            "src",
-            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"
-        );
-        document.body.appendChild(mathJaxScript);
-
         getModel(this.modelId).then(response => {
             this.model = response.data;
             this.markdown = this.model.description;
         });
+    },
+    methods: {
+        injectScriptTag(src, async=false, head=false) {
+            console.log("Injecting", src)
+            let script = document.createElement("script")
+            script.setAttribute("src", src)
+            script.setAttribute("type", "text/javascript")
+            script.async = async
+            if (head) {
+                document.head.appendChild(script)
+            } else {
+                document.body.appendChild(script)
+            }
+        }
     }
 };
 </script>
