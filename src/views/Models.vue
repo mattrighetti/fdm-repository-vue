@@ -4,7 +4,7 @@
         <!-- <SearchBar class="mb-5"/> -->
         <div class="grid grid-cols-10 gap-4">
             <div class="col-span-10 md:col-span-7 xl:col-span-8">
-                <ModelCard v-for="model in filtered_models" :key="model.name" :model="model" :query_array="query_array" class="mb-1"/>
+                <ModelCard v-for="model in filtered_models" :key="model.id" :model="model" :query_array="query_array" class="mb-1"/>
             </div>
             <div class="col-span-10 md:col-span-3 xl:col-span-2">
                 <FilterBox :filterbox="dropdown_config" @reset="reset" @update-dropdown="update_dropdown"/>
