@@ -8,62 +8,66 @@ import MissingModels from '@/views/MissingModels'
 import Copyright from '@/views/Copyright'
 import Privacy from '@/views/Privacy'
 import LandingPage from '@/views/LandingPage'
+import UnderConstruction from '@/views/UnderConstruction'
+import NotFound from '@/views/NotFound'
 
 const routes = [
     {
-        path: "/",
-        name: "landing",
-        component: LandingPage
-    },{
-        path: "/models",
-        name: "models",
+        path: '/models',
+        name: 'models',
         component: Models
     },
     {
-        path: "/about",
-        name: "about",
+        path: '/about',
+        name: 'about',
         component: About
     },
     {
-        path: "/models/:id",
-        name: "model",
+        path: '/models/:id',
+        name: 'model',
         component: Model
     },
     {
-        path: "/cross-validation",
-        name: "cross-validation",
+        path: '/cross-validation',
+        name: 'cross-validation',
         component: CrossValidation
     },
     {
-        path: "/missing-models",
-        name: "missing-models",
+        path: '/missing-models',
+        name: 'missing-models',
         component: MissingModels
     },
     {
-        path: "/get-involved",
-        name: "get-involved",
-        component: Models
+        path: '/get-involved',
+        name: 'get-involved',
+        component: UnderConstruction
     },
     { 
-        path: "/faq",
-        name: "faq",
-        component: Model
+        path: '/faq',
+        name: 'faq',
+        component: UnderConstruction
     },
     { 
-        path:"/copyright",
-        name: "copyright",
+        path:'/copyright',
+        name: 'copyright',
         component: Copyright
     },
     { 
-        path: "/privacy",
-        name: "privacy",
+        path: '/privacy',
+        name: 'privacy',
         component: Privacy
     },
     { 
-        path: "/credits",
-        name: "credits",
-        component: Model
-    }
+        path: '/credits',
+        name: 'credits',
+        component: UnderConstruction
+    },
+    {
+        path: '/',
+        name: 'landing',
+        component: LandingPage
+    },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
 
 const router = createRouter({

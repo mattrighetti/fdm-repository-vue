@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto mt-5 sm:mt-20">
-        <div class="text-center text-5xl font-extrabold leading-none tracking-tight">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-500">
+        <div class="text-center text-5xl  font-extrabold leading-none tracking-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-700">
                 Flood Damage Model Repository
             </span>
         </div>
