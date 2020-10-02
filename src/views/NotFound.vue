@@ -1,9 +1,8 @@
 <template>
     <div class="flex flex-col h-screen px-5">
         <svg 
-        class="w-56 sm:w-1/2 h-auto mx-auto mt-5 sm:mt-10"
-        viewBox="0 0 60 60" 
-        width="500px" height="500px"
+        class="w-56 sm:w-1/4 md:w-1/3 mx-auto mt-5 sm:mt-10"
+        viewBox="0 0 60 60"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         >

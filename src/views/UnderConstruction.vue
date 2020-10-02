@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen px-5">
         <svg
-        class="mx-auto mt-10 w-56 sm:w-1/4 md:w-1/2"
+        class="mx-auto mt-10 w-56 sm:w-1/4 md:w-1/3"
         enable-background="new 0 0 512 512"
         viewBox="0 0 512 512" 
         xmlns="http://www.w3.org/2000/svg"
