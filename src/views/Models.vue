@@ -87,8 +87,8 @@ export default {
         }
     },
     mounted() {
-        getModels().then(response => this.models = response.data).catch(err => console.log(err))
-        getDropdownConfig().then(config => this.dropdown_config = config).catch(err => console.log(err))
+        getModels().then(response => this.models = response.data).catch(err => console.error(err))
+        getDropdownConfig().then(config => this.dropdown_config = config).catch(err => console.error(err))
     }
 };
 </script>
