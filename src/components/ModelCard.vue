@@ -40,8 +40,6 @@ export default {
                         delete pills[key]
                     }
                 })
-
-                console.log(pills)
                 
                 return pills
             }
