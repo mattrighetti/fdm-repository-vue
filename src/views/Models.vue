@@ -1,10 +1,10 @@
 <template>
     <div class="px-3 lg:px-20 mb-20">
-        <p class="text-3xl mt-5">Models</p>
-        <SearchBar class="mb-5"/>
+        <p class="text-3xl mt-5 mb-5">Models</p>
+        <!-- <SearchBar class="mb-5"/> -->
         <div class="grid grid-cols-10 gap-4">
             <div class="col-span-10 md:col-span-7 xl:col-span-8">
-                <ModelCard v-for="model in filtered_models" :key="model.name" :model="model" :query_array="query_array" class="mb-1"/>
+                <ModelCard v-for="model in filtered_models" :key="model.id" :model="model" :query_array="query_array" class="mb-1"/>
             </div>
             <div class="col-span-10 md:col-span-3 xl:col-span-2">
                 <FilterBox :filterbox="dropdown_config" @reset="reset" @update-dropdown="update_dropdown"/>
@@ -87,8 +87,8 @@ export default {
         }
     },
     mounted() {
-        getModels().then(response => this.models = response.data).catch(err => console.log(err))
-        getDropdownConfig().then(config => this.dropdown_config = config).catch(err => console.log(err))
+        getModels().then(response => this.models = response.data).catch(err => console.error(err))
+        getDropdownConfig().then(config => this.dropdown_config = config).catch(err => console.error(err))
     }
 };
 </script>

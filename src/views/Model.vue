@@ -92,6 +92,35 @@
 import { getModel } from "@/services/models.services";
 import marked from "marked";
 
+/* 
+This section is responsible for specifing image size using "=100x300"
+in image specifiers
+e.g.
+![Image](img_address "=100x200")
+*/
+
+const renderer = new marked.Renderer();
+
+function sanitize(str) {
+  return str.replace(/&<"/g, function (m) {
+    if (m === "&") return "&amp;"
+    if (m === "<") return "&lt;"
+    return "&quot;"
+  })
+}
+
+renderer.image = function (src, title, alt) {
+  const exec = /=\s*(\d*)\s*x\s*(\d*)\s*$/.exec(title)
+  let res = '<img src="' + sanitize(src) + '" alt="' + sanitize(alt)
+  if (exec && exec[1]) res += '" height="' + exec[1]
+  if (exec && exec[2]) res += '" width="' + exec[2]
+  return res + '">'
+}
+
+marked.setOptions({
+    renderer: renderer
+})
+
 export default {
     name: "model",
     data() {
