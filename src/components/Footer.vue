@@ -15,7 +15,7 @@
                         <span class="my-2"><a href="#" class="text-white font-light text-md hover:text-blue-500">Email us</a></span>
                     </div>
                     <div class="flex flex-col mt-10 md:mt-0">
-                        <img src="http://www.fdm.polimi.it/assets/img/logo-poli.png" alt="polimi" width="200" height="65">
+                        <img src="http://www.fdm.polimi.it/img/logo-poli.png" alt="polimi" width="200" height="65">
                     </div>
                 </div>
             </div>
