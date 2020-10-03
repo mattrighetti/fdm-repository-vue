@@ -50,6 +50,6 @@
                 </g>
             </g>
         </svg>
-        <p class="text-2xl text-center mx-auto mt-20">This page is under constructuion</p>
+        <p class="text-2xl text-center mx-auto mt-20">This page is under construction</p>
     </div>
 </template>
