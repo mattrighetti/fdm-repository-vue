@@ -10,6 +10,7 @@ import Privacy from '@/views/Privacy'
 import LandingPage from '@/views/LandingPage'
 import UnderConstruction from '@/views/UnderConstruction'
 import NotFound from '@/views/NotFound'
+import Credits from '@/views/Credits'
 
 const routes = [
     {
@@ -60,7 +61,7 @@ const routes = [
     { 
         path: '/credits',
         name: 'credits',
-        component: UnderConstruction
+        component: Credits
     },
     {
         path: '/',
