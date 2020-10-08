@@ -362,6 +362,11 @@ export default {
     @apply px-3;
 }
 
+.markdown center {
+    @apply flex;
+    @apply justify-center;
+}
+
 /* Override pygments style background color. */
 .markdown .highlight pre {
     @apply bg-gray-100 /* !important */;
