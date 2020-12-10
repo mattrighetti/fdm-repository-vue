@@ -4,7 +4,7 @@
             <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                 <div class="lg:w-0 lg:flex-1">
                     <router-link :to="{ name: 'landing' }" class="flex">
-                        <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                        <img class="pl-2 h-20" src="http://www.fdm.polimi.it/img/logos/FDM-Round-Logo-B.png" alt="Workflow" />
                     </router-link>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
@@ -76,7 +76,7 @@
                             <div class="pt-5 pb-6 px-5 space-y-6">
                                 <div class="flex items-center justify-between">
                                     <div>
-                                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                                        <img class="h-20" src="http://www.fdm.polimi.it/img/logos/FDM-Round-Logo-B.png" alt="Workflow" />
                                     </div>
                                     <div class="-mr-2">
                                         <button @click="toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
