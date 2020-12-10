@@ -2,7 +2,7 @@
     <div class="px-5 md:px-15 lg:px-20 xl:px-64 pt-10 pb-20">
         <p class="text-3xl mb-5">The Flood Damage Repository</p>
         <video class="mb-5" controls>
-            <source src="http://www.fdm.polimi.it/assets/video/Video%20FDM.mp4" type="video/mp4">
+            <source src="http://www.fdm.polimi.it/video/about.mp4" type="video/mp4">
             <source src="movie.ogg" type="video/ogg">
             Your browser does not support the video tag.
         </video>
