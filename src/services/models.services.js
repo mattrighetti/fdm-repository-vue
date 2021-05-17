@@ -11,3 +11,7 @@ export function getModel(id) {
 export function getMissingModels() {
     return api().get('/missing-models')
 }
+
+export function getFilters() {
+    return api().get("/filters")
+}

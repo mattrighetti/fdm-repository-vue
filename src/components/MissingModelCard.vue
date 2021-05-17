@@ -1,7 +1,7 @@
 <template>
     <div class="rounded border border-gray-300 py-6 px-6 overflow-hidden hover:bg-gray-100">
         <p class="text-2xl">{{ missing_model.name }}</p>
-        <p class="text-base font-light" v-html="parsed_biblio"></p>
+        <p class="text-base text-gray-500 font-light" v-html="parsed_biblio"></p>
     </div>
 </template>
 
