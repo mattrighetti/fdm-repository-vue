@@ -8,6 +8,7 @@ import Copyright from '@/views/Copyright'
 import Privacy from '@/views/Privacy'
 import LandingPage from '@/views/LandingPage'
 import UnderConstruction from '@/views/UnderConstruction'
+import GetInvolved from '@/views/GetInvolved'
 import NotFound from '@/views/NotFound'
 import Credits from '@/views/Credits'
 
@@ -40,7 +41,7 @@ const routes = [
     {
         path: '/get-involved',
         name: 'get-involved',
-        component: UnderConstruction
+        component: GetInvolved
     },
     { 
         path: '/faq',
