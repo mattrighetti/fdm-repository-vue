@@ -24,7 +24,7 @@
             <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
                 <div class="sm:w-2/3 text-center py-6">
                     <p class="text-sm text-white font-bold mb-2">
-                        © 2020 by Politecnico di Milano
+                        © 2021 by Politecnico di Milano
                     </p>
                 </div>
             </div>
