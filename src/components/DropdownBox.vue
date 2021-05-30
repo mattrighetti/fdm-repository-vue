@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { reactive, watchEffect } from 'vue'
+import { reactive } from 'vue'
 
 export default {
     name: "FilterBox",

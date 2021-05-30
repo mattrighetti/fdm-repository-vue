@@ -3,8 +3,8 @@
         <div class="px-6 py-4">
             <router-link :to="{ name: 'model', params: { id: this.model.id }}">
                 <div class="font-light text-lg no-underline hover:underline">
-                    {{ model.acronym != "" ? model.acronym : model.name }}
-                    <sub v-if="model.version != ''">{{ model.version }}</sub>
+                    {{ model.acronym !== "" ? model.acronym : model.name }}
+                    <sub v-if="model.version !== ''">{{ model.version }}</sub>
                 </div>
             </router-link>
         </div>
@@ -36,7 +36,7 @@ export default {
                 var { id, version, name, acronym, ...pills } = this.model
                 // Remove empty pills
                 Object.keys(pills).forEach(key => {
-                    if (pills[key] == "") {
+                    if (pills[key] === "") {
                         delete pills[key]
                     }
                 })
@@ -48,11 +48,12 @@ export default {
             get() {
                 var toHighlightArray = []
                 Object.values(this.pills).forEach(value => {
-                    Object.values(this.query_array).forEach(arrayVal => {
-                        if (value.includes(arrayVal)) {
-                            toHighlightArray.push(value)
-                        }
-                    })
+                    Object.values(this.query_array)
+                        .forEach(arrayVal => {
+                            if (value.includes(arrayVal)) {
+                                toHighlightArray.push(value)
+                            }
+                        })
                 })
 
                 return toHighlightArray
